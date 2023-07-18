@@ -1,0 +1,30 @@
+gráficas << SDL
+math << GLM
+enitities << entt
+Audio << OpenAL
+Physics << box2d
+UI << imgui
+Scripting, Lua o Python, cualqueir cosa que sea interpretada
+Assets, dibujados
+
+
+Networking?
+Serialziación?
+Animaciones << manual con SDL, si te vas a 3D skull emoji
+
+Las tareas van a ser una evidencia de que se implementó, junto con una reflexión sobre el tema
+
+100% ejercicios
+
+Tracks:
+ Narrativa, El por qué de todo, porfa.
+ Heart
+ Theme
+ Friction
+ Spark
+
+
+cmake -S . -B build
+
+
+Él hace unos scripts para no tener que escribir comandos

@@ -1,0 +1,83 @@
+#include <print.h>
+#include "game.h"
+
+
+Game::Game(const char* name, int width, int height) : width(width), height(height)
+{
+    SDL_Init(SDL_INIT_EVERYTHING);
+
+    window = SDL_CreateWindow(name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
+    renderer = SDL_CreateRenderer(window, -1, 0);
+
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+
+    int maxFPS = 60;
+    frameDuration = (1.0f / maxFPS) * 1000.0f;  // how many mili seconds in one frame
+
+    // initial frame count variables
+    frameCount = 0;
+    lastFPSUpdateTime = 0;
+    FPS = 0;
+}
+
+void Game::frameStart()
+{
+    print("Frame start\n");
+}
+void Game::frameEnd()
+{
+    frameEndTimestamp = SDL_GetTicks();
+
+    float actualFrameDuration = frameEndTimestamp - frameStartTimestamp;
+
+    //FPS throttling
+    if (actualFrameDuration < frameDuration)
+        SDL_Delay(frameDuration - actualFrameDuration);
+    
+
+    frameCount++;
+    // Update FPS counter every second
+    Uint32 currentTime = SDL_GetTicks();
+    if (currentTime - lastFPSUpdateTime > 1000) // 1000 milliseconds in 1 second
+    {
+        FPS = frameCount / ((currentTime - lastFPSUpdateTime) / 1000.0f);
+        lastFPSUpdateTime = currentTime;
+        frameCount = 0;
+    }
+}
+void Game::update()
+{
+    print("update\n");
+}
+void Game::render()
+{
+    print("rendering\n");
+
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 1);
+    SDL_RenderClear(renderer);
+
+    SDL_RenderPresent(renderer);
+
+    vprint(FPS);
+}
+bool Game::running()
+{
+    return stateFlags & 1;
+}
+void Game::handleEvents()
+{
+    print("Handle events\n");
+    SDL_Event event;
+    while (SDL_PollEvent(&event) != 0)
+    {
+        if (event.type == SDL_QUIT)
+            stateFlags = 0;
+    }
+}
+Game::~Game()
+{
+    SDL_DestroyRenderer(renderer);
+
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+}
