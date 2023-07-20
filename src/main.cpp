@@ -1,5 +1,6 @@
 #include <iostream>
 #include "print.h"
+#include "pong.h"
 #include "game.h"
 
 using namespace std;
@@ -12,7 +13,7 @@ int main(int argc, char* argv[])
 
 	print("Number:", 3, 0.5);
 
-	Game pong = Pong("Pong", 800, 600);
+	Pong pong = Pong("Pong", 800, 600);
 
 	while (pong.running())
 	{

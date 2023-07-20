@@ -18,18 +18,28 @@ Game::Game(const char* name, int width, int height) : width(width), height(heigh
     frameCount = 0;
     lastFPSUpdateTime = 0;
     FPS = 0;
+    frameEndTimestamp = frameStartTimestamp = SDL_GetTicks();
 }
+
 
 void Game::frameStart()
 {
-    print("Frame start\n");
+    print("Game frame start\n");
+    deltaTime = (frameEndTimestamp - frameStartTimestamp) / 1000.0f;
+
+    vprint(deltaTime);
+    frameStartTimestamp = SDL_GetTicks();
 }
 void Game::frameEnd()
 {
+    print("Game end start\n");
+
     frameEndTimestamp = SDL_GetTicks();
 
     float actualFrameDuration = frameEndTimestamp - frameStartTimestamp;
 
+    //vprint(frameDuration);
+    //vprint(actualFrameDuration);
     //FPS throttling
     if (actualFrameDuration < frameDuration)
         SDL_Delay(frameDuration - actualFrameDuration);
@@ -44,21 +54,21 @@ void Game::frameEnd()
         lastFPSUpdateTime = currentTime;
         frameCount = 0;
     }
+    vprint(FPS);
 }
 void Game::update()
 {
-    print("update\n");
+    print("Game update\n");
 }
 void Game::render()
 {
-    print("rendering\n");
+    print("Game rendering\n");
 
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 1);
     SDL_RenderClear(renderer);
 
     SDL_RenderPresent(renderer);
 
-    vprint(FPS);
 }
 bool Game::running()
 {

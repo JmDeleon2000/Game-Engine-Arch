@@ -1,12 +1,61 @@
 # ninja log v5
-2	23	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
-23	871	7113488647824824	CMakeFiles/DARKS_ENGINE.dir/src/main.cpp.obj	bbd5fb2a8ad625d3
-26	798	7113488363089061	CMakeFiles/DARKS_ENGINE.dir/src/game.cpp.obj	e59a6e6beff9d9a9
-871	1034	7113488649107617	DARKS_ENGINE.exe	c7417fad391ddd9c
+34	1666	7115962882661492	CMakeFiles/DARKS_ENGINE.dir/src/main.cpp.obj	bbd5fb2a8ad625d3
+2	34	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+1212	1431	7115972332652014	DARKS_ENGINE.exe	3376a7509b3b351d
+45	1307	7115964807449041	CMakeFiles/DARKS_ENGINE.dir/src/game.cpp.obj	e59a6e6beff9d9a9
 21	110	7113490977895081	build.ninja	c290cfab4151ed42
+35	1211	7115972330932031	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
 25	1066	7113488210312890	CMakeFiles/DARKS_ENGINE.dir/src/game/game.cpp.obj	e979cff52352efde
-1	23	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
-28	1167	7113496994868362	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
-34	1173	7113496994918234	CMakeFiles/DARKS_ENGINE.dir/src/game.cpp.obj	e59a6e6beff9d9a9
-23	1196	7113496995148234	CMakeFiles/DARKS_ENGINE.dir/src/main.cpp.obj	bbd5fb2a8ad625d3
-1196	1381	7113496996568268	DARKS_ENGINE.exe	3376a7509b3b351d
+4	34	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+35	1107	7115972946526619	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1109	1336	7115972948286690	DARKS_ENGINE.exe	3376a7509b3b351d
+2	30	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+31	1855	7115973147258292	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1856	2083	7115973149058285	DARKS_ENGINE.exe	3376a7509b3b351d
+3	36	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+37	1193	7115973526423660	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1194	1442	7115973528103741	DARKS_ENGINE.exe	3376a7509b3b351d
+2	36	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+37	1840	7115973734827618	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1840	2063	7115973736509016	DARKS_ENGINE.exe	3376a7509b3b351d
+2	35	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+36	1155	7115973998487481	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1155	1368	7115974000050219	DARKS_ENGINE.exe	3376a7509b3b351d
+2	35	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+35	1409	7115974395879147	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1409	1629	7115974397559987	DARKS_ENGINE.exe	3376a7509b3b351d
+2	34	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+35	1196	7115974619634853	CMakeFiles/DARKS_ENGINE.dir/src/main.cpp.obj	bbd5fb2a8ad625d3
+42	1204	7115974619714898	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1205	1419	7115974621394961	DARKS_ENGINE.exe	3376a7509b3b351d
+2	36	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+37	1301	7115974927243115	CMakeFiles/DARKS_ENGINE.dir/src/main.cpp.obj	bbd5fb2a8ad625d3
+44	1319	7115974927442645	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1319	1582	7115974929202758	DARKS_ENGINE.exe	3376a7509b3b351d
+2	34	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+35	1428	7115980978230974	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1429	1747	7115980980551040	DARKS_ENGINE.exe	3376a7509b3b351d
+2	44	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+45	1518	7115981160054884	CMakeFiles/DARKS_ENGINE.dir/src/main.cpp.obj	bbd5fb2a8ad625d3
+57	1553	7115981160375215	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1553	1809	7115981162335209	DARKS_ENGINE.exe	3376a7509b3b351d
+2	33	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+34	1287	7115981380768183	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1287	1501	7115981382408183	DARKS_ENGINE.exe	3376a7509b3b351d
+2	32	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+33	1104	7115981895416131	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1104	1322	7115981897099753	DARKS_ENGINE.exe	3376a7509b3b351d
+2	39	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+40	1183	7115983450705860	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1183	1438	7115983452625535	DARKS_ENGINE.exe	3376a7509b3b351d
+2	33	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+41	1376	7115984009448776	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+34	1383	7115984009488750	CMakeFiles/DARKS_ENGINE.dir/src/main.cpp.obj	bbd5fb2a8ad625d3
+1383	1610	7115984011248766	DARKS_ENGINE.exe	3376a7509b3b351d
+2	32	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+3	36	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+37	1270	7115985186019606	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1270	1510	7115985187822294	DARKS_ENGINE.exe	3376a7509b3b351d
+3	35	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
+36	1135	7115985354601948	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
+1135	1349	7115985356244698	DARKS_ENGINE.exe	3376a7509b3b351d

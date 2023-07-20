@@ -18,6 +18,7 @@ public:
     float deltaTime;
 
     Game(const char* name, int width, int height);
+    Game();
 
 
     void frameStart();
