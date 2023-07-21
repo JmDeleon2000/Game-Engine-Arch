@@ -25,7 +25,7 @@ Game::Game(const char* name, int width, int height) : width(width), height(heigh
 void Game::frameStart()
 {
     print("Game frame start\n");
-    deltaTime = (frameEndTimestamp - frameStartTimestamp) / 1000.0f;
+    deltaTime = (frameEndTimestamp - frameStartTimestamp) / 100.0f;
 
     vprint(deltaTime);
     frameStartTimestamp = SDL_GetTicks();

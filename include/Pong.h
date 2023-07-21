@@ -14,8 +14,8 @@ private:
 	const int hball_h = ball_h / 2 + 1;
 	const int hball_w = ball_w / 2 + 1;
 
-	int ball_speed_x;
-	int ball_speed_y;
+	float ball_speed_x;
+	float ball_speed_y;
 
 	int paddle_w = 20;
 	int paddle_h = 300;
@@ -23,7 +23,10 @@ private:
 	float l_paddle_y;
 	float r_paddle_x;
 	float r_paddle_y;
-	float paddle_speed = 1500.0f;
+	float paddle_speed = 1000.0f;
+
+	int l_player_score = 0;
+	int r_player_score = 0;
 
 	const int hpaddle_h = paddle_h / 2 + 1;
 

@@ -3,19 +3,34 @@
 #include <stdlib.h>
 #include <math.h>
 #include <numbers>
+#include <time.h>
 
-constexpr double pi = std::numbers::pi;
+static void reset_ball(float* ball_speed_x, float* ball_speed_y, 
+                        float* ball_x, float* ball_y,
+                        int w, int h)
+{
+    constexpr double pi = std::numbers::pi;
+    constexpr float ball_speed = 500;
+
+    const float angles[] = {pi/3*4, pi / 3 * 8};
+    int angle_index = rand() % 2;
+    *ball_speed_x = ball_speed * cos(angles[angle_index]);
+    *ball_speed_y = ball_speed * sin(angles[angle_index]);
+
+
+    *ball_x = w / 2;
+    *ball_y = h / 2;
+}
+
+
 Pong::Pong(const char* name, int width, int height) : Game(name, width, height)
 {
+    srand(time(NULL));
     SDL_Init(SDL_INIT_EVERYTHING);
 
-    ball_x = width / 2;
-    ball_y = height / 2;
-
-    constexpr int ball_speed = 100;
-    int angle = rand() % 360 * pi / 2;
-    ball_speed_x = cos(angle) * ball_speed;
-    ball_speed_y = sin(angle) * ball_speed;
+    reset_ball(&ball_speed_x, &ball_speed_y,
+                &ball_x, &ball_y,
+                width, height);
 
     l_paddle_x = 10;
     r_paddle_x = width - 10 - paddle_w;
@@ -28,51 +43,76 @@ void  Pong::update()
 {
     print("Pong update\n");
 
-    //move ball
-    const float new_ball_x = ball_x + ball_speed_x *deltaTime;
-    const float new_ball_y = ball_y + ball_speed_y *deltaTime;
-    vprint(ball_speed_x);
-    vprint(ball_speed_x * deltaTime);
-    vprint(ball_speed_y);
-    vprint(ball_speed_y * deltaTime);
-    if (new_ball_x > width - hball_w || new_ball_x < hball_w)
-        ball_speed_x *= -1;
-    else
-        ball_x = new_ball_x;
-    if (new_ball_y > height - hball_h || new_ball_y < hball_h)
-        ball_speed_y *= -1;
-    else
-        ball_y = new_ball_y;
-
     if (paddles_move_flags & l_paddle_up_mask)
     {
         const float new_l_paddle_y = l_paddle_y - paddle_speed * deltaTime;
         if (new_l_paddle_y > 0)
             l_paddle_y = new_l_paddle_y;
+        else
+            l_paddle_y = 0;
     }
     if (paddles_move_flags & l_paddle_down_mask)
     {
         const float new_l_paddle_y = l_paddle_y + paddle_speed * deltaTime;
         if (new_l_paddle_y < height - paddle_h)
             l_paddle_y = new_l_paddle_y;
+        else
+            l_paddle_y = height - paddle_h;
     }
     if (paddles_move_flags & r_paddle_up_mask)
     {
         const float new_r_paddle_y = r_paddle_y - paddle_speed * deltaTime;
         if (new_r_paddle_y > 0)
             r_paddle_y = new_r_paddle_y;
+        else
+            r_paddle_y = 0;
     }
     if (paddles_move_flags & r_paddle_down_mask)
     {
         const float new_r_paddle_y = r_paddle_y + paddle_speed * deltaTime;
         if (new_r_paddle_y < height - paddle_h)
             r_paddle_y = new_r_paddle_y;
-        vprint(new_r_paddle_y);
-        vprint(r_paddle_y);
+        else
+            r_paddle_y = height - paddle_h;
     }
 
     //reset flags
     paddles_move_flags = 0;
+
+
+
+    //move ball
+    const float new_ball_x = ball_x + ball_speed_x * deltaTime;
+    const float new_ball_y = ball_y + ball_speed_y * deltaTime;
+
+    if (new_ball_x < l_paddle_x + paddle_w 
+            && (new_ball_y < l_paddle_y + paddle_h && new_ball_y > l_paddle_y)
+        || new_ball_x > r_paddle_x - ball_w 
+            && (new_ball_y < r_paddle_y + paddle_h && new_ball_y > r_paddle_y)
+        )
+        ball_speed_x *= -1;
+    else
+    {
+        ball_x = new_ball_x;
+        if (new_ball_x > width - hball_w)
+        {
+            reset_ball(&ball_speed_x, &ball_speed_y,
+                &ball_x, &ball_y,
+                width, height);
+            l_player_score++;
+        }
+        if (new_ball_x < 0)
+        {
+            reset_ball(&ball_speed_x, &ball_speed_y,
+                &ball_x, &ball_y,
+                width, height);
+            r_player_score++;
+        }
+    }
+    if (new_ball_y > height - ball_h || new_ball_y < 0)
+        ball_speed_y *= -1;
+    else
+        ball_y = new_ball_y;
 }
 void Pong::render()
 {
