@@ -1,8 +1,0 @@
-# ninja log v5
-3	45	0	D:/deUvG/Game Engine/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	decca3963436b2a2
-47	1436	7116901922518683	CMakeFiles/DARKS_ENGINE.dir/src/main.cpp.obj	bbd5fb2a8ad625d3
-46	1346	7116905660871046	CMakeFiles/DARKS_ENGINE.dir/src/game.cpp.obj	e59a6e6beff9d9a9
-1347	1600	7116905662733611	DARKS_ENGINE.exe	3376a7509b3b351d
-21	110	7116906398537719	build.ninja	c290cfab4151ed42
-25	1066	7113488210312890	CMakeFiles/DARKS_ENGINE.dir/src/game/game.cpp.obj	e979cff52352efde
-58	1443	7116901922568689	CMakeFiles/DARKS_ENGINE.dir/src/Pong.cpp.obj	415621908eea1860
