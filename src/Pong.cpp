@@ -5,6 +5,7 @@
 #include <numbers>
 #include <time.h>
 
+
 static void reset_ball(float* ball_speed_x, float* ball_speed_y, 
                         float* ball_x, float* ball_y,
                         int w, int h)
@@ -12,8 +13,8 @@ static void reset_ball(float* ball_speed_x, float* ball_speed_y,
     constexpr double pi = std::numbers::pi;
     constexpr float ball_speed = 500;
 
-    const float angles[] = {pi/3*4, pi / 3 * 8};
-    int angle_index = rand() % 2;
+    const float angles[] = {pi /3 *4, pi / 3 * 8, pi / 4 , pi *3 /4};
+    int angle_index = rand() % 4;
     *ball_speed_x = ball_speed * cos(angles[angle_index]);
     *ball_speed_y = ball_speed * sin(angles[angle_index]);
 
@@ -35,6 +36,7 @@ Pong::Pong(const char* name, int width, int height) : Game(name, width, height)
     l_paddle_x = 10;
     r_paddle_x = width - 10 - paddle_w;
     r_paddle_y = l_paddle_y = height/2 - paddle_h / 2;
+
 }
 
 
@@ -160,6 +162,7 @@ void Pong::handleEvents()
         {
         case SDL_QUIT:
             stateFlags = 0;
+            print("Final score: ", l_player_score, " - ", r_player_score);
             break;
         case SDL_KEYDOWN:
             switch (event.key.keysym.sym)

@@ -12,7 +12,7 @@ Game::Game(const char* name, int width, int height) : width(width), height(heigh
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
     int maxFPS = 60;
-    frameDuration = (1.0f / maxFPS) * 1000.0f;  // how many mili seconds in one frame
+    frameDuration = (1000.0f / maxFPS);  // how many mili seconds in one frame
 
     // initial frame count variables
     frameCount = 0;
@@ -25,7 +25,7 @@ Game::Game(const char* name, int width, int height) : width(width), height(heigh
 void Game::frameStart()
 {
     print("Game frame start\n");
-    deltaTime = (frameEndTimestamp - frameStartTimestamp) / 100.0f;
+    deltaTime = (frameEndTimestamp - frameStartTimestamp) / 1000.0f;
 
     vprint(deltaTime);
     frameStartTimestamp = SDL_GetTicks();
@@ -34,8 +34,8 @@ void Game::frameEnd()
 {
     print("Game end start\n");
 
-    frameEndTimestamp = SDL_GetTicks();
 
+    frameEndTimestamp = SDL_GetTicks();
     float actualFrameDuration = frameEndTimestamp - frameStartTimestamp;
 
     //vprint(frameDuration);
@@ -44,16 +44,12 @@ void Game::frameEnd()
     if (actualFrameDuration < frameDuration)
         SDL_Delay(frameDuration - actualFrameDuration);
     
+    frameEndTimestamp = SDL_GetTicks();
 
     frameCount++;
     // Update FPS counter every second
     Uint32 currentTime = SDL_GetTicks();
-    if (currentTime - lastFPSUpdateTime > 1000) // 1000 milliseconds in 1 second
-    {
-        FPS = frameCount / ((currentTime - lastFPSUpdateTime) / 1000.0f);
-        lastFPSUpdateTime = currentTime;
-        frameCount = 0;
-    }
+    FPS = 1 / deltaTime;
     vprint(FPS);
 }
 void Game::update()
