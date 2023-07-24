@@ -92,27 +92,25 @@ void  Pong::update()
         || new_ball_x > r_paddle_x - ball_w 
             && (new_ball_y < r_paddle_y + paddle_h && new_ball_y > r_paddle_y)
         )
-        ball_speed_x *= -1;
+        ball_speed_x *= -1.05;
     else
     {
         ball_x = new_ball_x;
         if (new_ball_x > width - hball_w)
         {
-            reset_ball(&ball_speed_x, &ball_speed_y,
-                &ball_x, &ball_y,
-                width, height);
             l_player_score++;
+            stateFlags = 0;
+            print("Final score: ", l_player_score, " - ", r_player_score);
         }
         if (new_ball_x < 0)
         {
-            reset_ball(&ball_speed_x, &ball_speed_y,
-                &ball_x, &ball_y,
-                width, height);
             r_player_score++;
+            stateFlags = 0;
+            print("Final score: ", l_player_score, " - ", r_player_score);
         }
     }
     if (new_ball_y > height - ball_h || new_ball_y < 0)
-        ball_speed_y *= -1;
+        ball_speed_y *= -1.05;
     else
         ball_y = new_ball_y;
 }

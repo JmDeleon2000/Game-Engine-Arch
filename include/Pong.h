@@ -23,7 +23,7 @@ private:
 	float l_paddle_y;
 	float r_paddle_x;
 	float r_paddle_y;
-	float paddle_speed = 750.0f;
+	float paddle_speed = 1750.0f;
 
 	int l_player_score = 0;
 	int r_player_score = 0;
