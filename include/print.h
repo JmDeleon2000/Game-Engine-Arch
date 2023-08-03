@@ -1,26 +1,25 @@
 #pragma once
 #include <iostream>
-
-
 #define vprint(var) print(#var ":", var)
 
-inline void print(auto val)
-{
-	std::cout << val;
+inline void print() {
+  std::cout << std::endl;
 }
 
-inline void print(auto first, auto ...args)
-{
-	if constexpr (sizeof ...(args) == 1)
-	{
-		print(first);
-		std::cout << " ";
-		print(args...);
-		std::cout << std::endl;
-	} else
-	{
-		print(first);
-		std::cout << " ";
-		print(args...);
-	}
+inline void print(auto value, bool isLast = true) {
+  std::cout << value;
+  if (isLast) {
+    std::cout << std::endl;
+  }
+}
+
+inline void print(auto first, auto ...args) {
+  print(first, false);
+
+  if constexpr (sizeof...(args) > 0) {
+    std::cout << ' ';
+    print(args...);
+  } else {
+    std::cout << std::endl;
+  }
 }

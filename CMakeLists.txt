@@ -15,15 +15,22 @@ file(
 
 
 
-add_executable(${PROJECT_NAME} src/main.cpp ${SOURCES} "src/Pong.cpp" "include/Pong.h")
+add_executable(${PROJECT_NAME} src/main.cpp ${SOURCES} "src/main.cpp")
 
 
 set(SDL2_DIR "D:/SDL/SDL2-2.26.4/cmake")
 find_package(SDL2 REQUIRED)
 
+#https://github.com/g-truc/glm/blob/master/manual.md#section1
+set(glm_DIR "D:/glm/glm-0.9.9.8/cmake/glm") # if necessary
+find_package(glm REQUIRED)
+
 
 target_include_directories(
     ${PROJECT_NAME}
+    PUBLIC ${PROJECT_SOURCE_DIR}/src
+    PUBLIC ${PROJECT_SOURCE_DIR}/src/Game
+    PUBLIC ${PROJECT_SOURCE_DIR}/src/Scene
     PRIVATE ${PROJECT_SOURCE_DIR}/include
     )
 
@@ -31,4 +38,5 @@ target_include_directories(
 target_link_libraries(
     ${PROJECT_NAME}
     ${SDL2_LIBRARIES}
+    glm::glm
     ) 
