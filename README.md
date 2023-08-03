@@ -1,11 +1,11 @@
-# Left Paddle Controls
+# Right Paddle Controls
 ### Up
 w
 ### Down
 s
 
 
-# Right Paddle Controls
+# Left Paddle Controls
 ### Up
 up arrow
 ### Down
